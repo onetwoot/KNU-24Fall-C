@@ -56,7 +56,6 @@ void movePointer(void* array)
 
 		before = *((int*)array + move);
 
-		printf("%d", move);
 		printf("현재 위치 : (%d, %d), 배열의 값 : %d\n", x, y, *((int*)array + move));
 
 		move += *((int*)array + move);
