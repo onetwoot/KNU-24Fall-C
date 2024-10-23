@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 void vecAdd(struct save vec1, struct save vec2);
 void vecSub(struct save vec1, struct save vec2);
@@ -15,25 +15,25 @@ int main(void) {
 	struct save vec1, vec2;
 	int input;
 	
-	printf("Ã¹¹øÂ° º¤ÅÍ(x, y, z) : ");
-	scanf_s("%d %d %d", &vec1.arr1, &vec1.arr2, &vec1.arr3);
-	printf("µÎ¹øÂ° º¤ÅÍ(x, y, z) : ");
-	scanf_s("%d %d %d", &vec2.arr1, &vec2.arr2, &vec2.arr3);
+	printf("ì²«ë²ˆì§¸ ë²¡í„°(x, y, z) : ");
+	scanf_s("%d, %d, %d", &vec1.arr1, &vec1.arr2, &vec1.arr3);
+	printf("ë‘ë²ˆì§¸ ë²¡í„°(x, y, z) : ");
+	scanf_s("%d, %d, %d", &vec2.arr1, &vec2.arr2, &vec2.arr3);
 
-	printf("ÀÔ·ÂµÈ Ã¹¹øÂ° º¤ÅÍ\t%d,\t%d,\t%d\n", vec1.arr1, vec1.arr2, vec1.arr3);
-	printf("ÀÔ·ÂµÈ µÎ¹øÂ° º¤ÅÍ\t%d,\t%d,\t%d\n", vec2.arr1, vec2.arr2, vec2.arr3);
-
-	printf("\n--------------------------------------------\n");
-
-	printf("1. º¤ÅÍÀÇ ÇÕ\n");
-	printf("2. º¤ÅÍÀÇ Â÷\n");
-	printf("3. º¤ÅÍÀÇ ¿ÜÀû\n");
-	printf("4. º¤ÅÍÀÇ ³»Àû\n");
-	printf("5. Á¾·á\n");
+	printf("ì…ë ¥ëœ ì²«ë²ˆì§¸ ë²¡í„°\t%d,\t%d,\t%d\n", vec1.arr1, vec1.arr2, vec1.arr3);
+	printf("ì…ë ¥ëœ ë‘ë²ˆì§¸ ë²¡í„°\t%d,\t%d,\t%d\n", vec2.arr1, vec2.arr2, vec2.arr3);
 
 	printf("\n--------------------------------------------\n");
 
-	printf("¸í·É ÀÔ·Â : ");
+	printf("1. ë²¡í„°ì˜ í•©\n");
+	printf("2. ë²¡í„°ì˜ ì°¨\n");
+	printf("3. ë²¡í„°ì˜ ì™¸ì \n");
+	printf("4. ë²¡í„°ì˜ ë‚´ì \n");
+	printf("5. ì¢…ë£Œ\n");
+
+	printf("\n--------------------------------------------\n");
+
+	printf("ëª…ë ¹ ì…ë ¥ : ");
 	scanf_s("%d", &input);
 
 	switch (input) {
@@ -63,7 +63,7 @@ void vecAdd(struct save vec1, struct save vec2) {
 	res.arr2 = vec1.arr2 + vec2.arr2;
 	res.arr3 = vec1.arr3 + vec2.arr3;
 
-	printf("º¤ÅÍÀÇ ÇÕÀº   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
+	printf("ë²¡í„°ì˜ í•©ì€   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
 }
 
 void vecSub(struct save vec1, struct save vec2) {
@@ -71,7 +71,7 @@ void vecSub(struct save vec1, struct save vec2) {
 	res.arr2 = vec1.arr2 - vec2.arr2;
 	res.arr3 = vec1.arr3 - vec2.arr3;
 
-	printf("º¤ÅÍÀÇ Â÷´Â   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
+	printf("ë²¡í„°ì˜ ì°¨ëŠ”   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
 }
 
 void vecDot(struct save vec1, struct save vec2) {
@@ -79,7 +79,7 @@ void vecDot(struct save vec1, struct save vec2) {
 
 	dotRes = vec1.arr1 * vec2.arr1 + vec1.arr2 * vec2.arr2 + vec1.arr3 * vec2.arr3;
 
-	printf("º¤ÅÍÀÇ ³»ÀûÀº   %d", dotRes);
+	printf("ë²¡í„°ì˜ ë‚´ì ì€ vec1 Â· vec2 = %d", dotRes);
 }
 
 void vecCro(struct save vec1, struct save vec2) {
@@ -87,5 +87,5 @@ void vecCro(struct save vec1, struct save vec2) {
 	res.arr2 = vec1.arr3 * vec2.arr1 - vec1.arr1 * vec2.arr3;
 	res.arr3 = vec1.arr1 * vec2.arr2 - vec1.arr2 * vec2.arr1;
 
-	printf("º¤ÅÍÀÇ ¿ÜÀûÀº   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
+	printf("ë²¡í„°ì˜ ì™¸ì ì€   x = %d   y = %d   z = %d", res.arr1, res.arr2, res.arr3);
 }
