@@ -10,8 +10,9 @@ struct Product {
 
 int main(void) {
 	struct Product s[5];
+	int i;
 
-	for (int i = 0; i < 5; i++) {
+	for (i = 0; i < 5; i++) {
 		printf("상품 정보를 입력하세요. (입력 중단은 id에 0 입력)\n");
 		printf("상품 ID : ");
 		scanf_s("%d", &s[i].id);
@@ -28,13 +29,10 @@ int main(void) {
 		printf("\n");
 	}
 
-	printf("\n<<입력된 상품 목록>>\n");
+	printf("\n<<입력된 상품 목록>>\n"); 
 
-	for (int i = 0; i < 5; i++) {
-		if (s[i].id == 0)
-			break;
-
-		printProduct(s[i]);
+	for (int j = 0; j < i; j++) {
+		printProduct(s[j]);
 	}
 
 	return 0;

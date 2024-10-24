@@ -24,36 +24,42 @@ int main(void) {
 	printf("입력된 두번째 벡터\t%d,\t%d,\t%d\n", vec2.arr1, vec2.arr2, vec2.arr3);
 
 	printf("\n--------------------------------------------\n");
+	
+	while (1) {
 
-	printf("1. 벡터의 합\n");
-	printf("2. 벡터의 차\n");
-	printf("3. 벡터의 외적\n");
-	printf("4. 벡터의 내적\n");
-	printf("5. 종료\n");
+		printf("1. 벡터의 합\n");
+		printf("2. 벡터의 차\n");
+		printf("3. 벡터의 외적\n");
+		printf("4. 벡터의 내적\n");
+		printf("5. 종료");
 
-	printf("\n--------------------------------------------\n");
+		printf("\n--------------------------------------------\n");
 
-	printf("명령 입력 : ");
-	scanf_s("%d", &input);
+		printf("명령 입력 : ");
+		scanf_s("%d", &input);
 
-	switch (input) {
-	case 1 :
-		vecAdd(vec1, vec2);
-		break;
-	case 2 :
-		vecSub(vec1, vec2);
-		break;
-	case 3 :
-		vecDot(vec1, vec2);
-		break;
-	case 4 :
-		vecCro(vec1, vec2);
-		break;
-	case 5 :
-		return 0;
+		switch (input) {
+		case 1:
+			vecAdd(vec1, vec2);
+			break;
+		case 2:
+			vecSub(vec1, vec2);
+			break;
+		case 3:
+			vecDot(vec1, vec2);
+			break;
+		case 4:
+			vecCro(vec1, vec2);
+			break;
+		case 5:
+			return 0;
+		default :
+			printf("올바르지 않은 입력입니다.");
+			break;
+		}
+
+		printf("\n--------------------------------------------\n");
 	}
-
-	printf("\n--------------------------------------------\n");
 
 	return 0;
 }
