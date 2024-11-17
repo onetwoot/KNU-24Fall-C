@@ -43,7 +43,7 @@ struct Customer* last_node()
 	return cur;
 }
 
-/* struct Customer* connect_node(char* name, int rank, int order_amount, int point) {
+struct Customer* connect_node(char* name, int rank, int order_amount, int point) {
 	struct Customer* new_node = create_node(name, rank, order_amount, point);
 	struct Customer* p = tail;
 	p->prev->next = new_node;
@@ -52,7 +52,7 @@ struct Customer* last_node()
 	new_node->next = p;
 
 	return new_node;
-} */
+}
 
 void insert_node_last(struct Customer* new_node)
 {
@@ -68,21 +68,21 @@ struct Customer* find_node_insert(enum rank rank, int order_amount, int point)
 
 	while (cur != NULL)
 	{
-		if (cur->rank < rank)
+		if (cur->rank <= rank)
 		{
 			if (cur->next == NULL) return cur;
 
 			cur->prev = cur;
 			cur = cur->next;
 		}
-		else if (cur->order_amount > order_amount)
+		else if (cur->order_amount >= order_amount)
 		{
 			if (cur->next == NULL) return cur;
 
 			cur->prev = cur;
 			cur = cur->next;
 		}
-		else if (cur->point > point)
+		else if (cur->point >= point)
 		{
 			if (cur->next == NULL) return cur;
 
@@ -162,12 +162,9 @@ int modify_node(char* name)
 int main()
 {
 	head = (struct Customer*)malloc(sizeof(struct Customer));
+	head->next = NULL;
 	tail = (struct Customer*)malloc(sizeof(struct Customer));
-	
-	head->next = tail;
-	head->prev = head;
-	tail->next = tail;
-	tail->prev = head;
+	tail->next = NULL;
 
 	int input;
 	int status = 1;
@@ -196,7 +193,7 @@ int main()
 			printf("포인트 : ");
 			scanf_s("%d", &points);
 
-			create_node(name, rank, orders, points);
+			insert_node_priority(create_node(name, rank, orders, points));
 			break;
 		case 2:
 			printf("삭제할 고객의 이름 : ");
