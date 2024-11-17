@@ -68,7 +68,7 @@ struct Customer* find_node_insert(enum rank rank, int order_amount, int point)
 
 	while (cur != NULL)
 	{
-		if (cur->rank > rank)
+		if (cur->rank < rank)
 		{
 			if (cur->next == NULL) return cur;
 
