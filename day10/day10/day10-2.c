@@ -125,7 +125,7 @@ int delete_node(char* name)
 	struct Customer* cur = head->next;
 	while (cur != NULL)
 	{
-		if (strcmp(name, cur->next) == 0)
+		if (strcmp(name, cur->customerName) == 0)
 		{
 			cur->next->prev = cur->prev;
 			cur->prev->next = cur->next;
@@ -144,7 +144,7 @@ int modify_node(char* name)
 	struct Customer* cur = head->next;
 	while (cur != NULL)
 	{
-		if (strcmp(name, cur->next) == 0)
+		if (strcmp(name, cur->customerName) == 0)
 		{
 			printf("µî±Ş : ");
 			scanf_s("%d", &cur->rank);
