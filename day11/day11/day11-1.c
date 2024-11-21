@@ -5,20 +5,10 @@
 int main(void)
 {
 	int a, b, c; // 계수 저장
-	// char str, x, first, second;
 	float res1, res2; // 해 저장
-
-	//printf("이차방정식을 입력하시오. (예시 : 1xpow + 4x + 4) : "); // x^뒤에 숫자가 있으면 액세스 오류
-	// scanf_s("%d%c %c %d%c %c %d", &a, &str, sizeof(str), &first, sizeof(first), &b, &x, sizeof(x), &second, sizeof(second), &c);
 	
 	printf("이차방정식의 계수를 입력하시오. (ax^2 + bx + c): ");
 	scanf_s("%d %d %d", &a, &b, &c);
-
-
-	/*if (first < 0)
-	{
-		b = -1 * b;
-	} */
 
 	if ((pow(b, 2) - 4 * a * c) < 0) // 판별식으로 허근임을 확인
 	{
