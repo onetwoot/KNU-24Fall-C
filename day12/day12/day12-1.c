@@ -12,26 +12,23 @@ int solution(int topping[], size_t topping_len) {
 
     for (int i = 0; i < topping_len; i++)
     {
-        int topps = topping[i];
-
-        if (younger[topps] == 0)
+        if (younger[topping[i]] == 0)
             youngersTopps++;
 
-        younger[topps]++;
+        younger[topping[i]]++;
     }
 
     for (int i = 0; i < topping_len; i++)
     {
-        int topps = topping[i];
-        younger[topps]--;
+        younger[topping[i]]--;
 
-        if (younger[topps] == 0)
+        if (younger[topping[i]] == 0)
             youngersTopps--;
 
-        if (older[topps] == 0)
+        if (older[topping[i]] == 0)
             oldersTopps++;
 
-        older[topps]++;
+        older[topping[i]]++;
 
         if (youngersTopps == oldersTopps)
             fairs++;
