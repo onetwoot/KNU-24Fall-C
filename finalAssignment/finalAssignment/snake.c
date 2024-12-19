@@ -172,7 +172,7 @@ void draw()
         nextstage *= 2;        // 스테이지 클리어 요구량 2배 증가
         power = 0;             // 스테이지를 넘어갔으므로 power 초기화
         nTail = score / 10;    // 꼬리 개수를 점수에 맞게 변환
-        if (stage >= 3)        // 5 스테이지 이상일 때 장애물 소환
+        if (stage >= 5)        // 5 스테이지 이상일 때 장애물 소환
         {
             n += 2;            // 스테이지가 올라갈 때마다 장애물 수 2개 증가
             addObstacles(n);
@@ -253,7 +253,7 @@ void logic()
     if (!isSpeed)
         times = 0;   // 시간 초기화
 
-    if (stage < 3)
+    if (stage < 5)
         proTimes = 0; // 장애물 위치 초기화 시간을 초기화
 
     if (proTimes > 20) // 20초가 지났을 시 장애물 위치 초기화
